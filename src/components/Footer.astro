@@ -1,0 +1,102 @@
+---
+
+---
+
+<footer class="bg-gray-900 text-white py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Main Footer Content -->
+    <div class="text-center">
+      <!-- Logo and Company Name -->
+      <div class="flex items-center justify-center space-x-3 mb-6">
+        <img src="/favicon.svg" alt="Know How Logo" class="w-10 h-10" />
+        <div class="flex flex-col">
+          <span class="text-2xl font-bold text-green-400">Know How</span>
+          <span class="text-gray-300">Soluciones Agrícolas</span>
+        </div>
+      </div>
+
+      <!-- Tagline -->
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Especialistas en certificaciones orgánicas de aguacate
+      </p>
+
+      <!-- Contact Info -->
+      <div
+        class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 mb-8"
+      >
+        <a
+          href="mailto:brajuba@hotmail.com"
+          class="flex items-center space-x-2 text-gray-300 hover:text-green-400 transition-colors duration-300"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+            ></path>
+          </svg>
+          <span>brajuba@hotmail.com</span>
+        </a>
+
+        <div class="flex items-center space-x-2 text-gray-300">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+            ></path>
+          </svg>
+          <span>Uruapan, Michoacán</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-gray-700 pt-8">
+      <!-- Copyright -->
+      <div class="text-center">
+        <p class="text-gray-400">
+          © {new Date().getFullYear()} Know How Soluciones Agrícolas. Todos los
+          derechos reservados.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to top button -->
+  <button
+    id="back-to-top"
+    class="fixed bottom-8 right-8 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 focus:ring-4 focus:ring-green-300 focus:outline-none opacity-0 invisible"
+  >
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg>
+  </button>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const backToTopButton = document.getElementById("back-to-top");
+
+    if (backToTopButton) {
+      // Show/hide button based on scroll position
+      window.addEventListener("scroll", function () {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.remove("opacity-0", "invisible");
+          backToTopButton.classList.add("opacity-100", "visible");
+        } else {
+          backToTopButton.classList.add("opacity-0", "invisible");
+          backToTopButton.classList.remove("opacity-100", "visible");
+        }
+      });
+
+      // Scroll to top when clicked
+      backToTopButton.addEventListener("click", function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    }
+  });
+</script>

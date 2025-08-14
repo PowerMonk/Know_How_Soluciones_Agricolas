@@ -1,0 +1,107 @@
+---
+
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo and Company Name -->
+      <a href="#home" class="flex items-center space-x-3 group">
+        <img
+          src="/favicon.svg"
+          alt="Know How Logo"
+          class="w-8 h-8 transition-transform group-hover:scale-110"
+        />
+        <div class="flex flex-col">
+          <span class="text-xl font-bold text-green-600">Know How</span>
+          <span class="text-sm text-gray-700 leading-tight"
+            >Soluciones Agrícolas</span
+          >
+        </div>
+      </a>
+
+      <!-- Contact Email -->
+      <div class="flex items-center">
+        <!-- Desktop: Show email with icon -->
+        <a
+          href="mailto:brajuba@hotmail.com"
+          class="hidden sm:flex items-center space-x-2 text-gray-700 hover:text-green-600 transition-colors group"
+        >
+          <svg
+            class="w-5 h-5 group-hover:scale-110 transition-transform"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+            ></path>
+          </svg>
+          <span class="text-sm font-medium">brajuba@hotmail.com</span>
+        </a>
+
+        <!-- Mobile: Show only icon with copy functionality -->
+        <button
+          id="email-copy-btn"
+          class="sm:hidden flex items-center justify-center w-10 h-10 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-full transition-colors"
+          title="Copiar email"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast notification for copied email -->
+  <div
+    id="email-toast"
+    class="fixed top-20 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 opacity-0"
+  >
+    Email copiado!
+  </div>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const emailBtn = document.getElementById("email-copy-btn");
+    const toast = document.getElementById("email-toast");
+
+    if (emailBtn && toast) {
+      emailBtn.addEventListener("click", async function () {
+        try {
+          await navigator.clipboard.writeText("brajuba@hotmail.com");
+
+          // Show toast
+          toast.classList.remove("translate-x-full", "opacity-0");
+          toast.classList.add("translate-x-0", "opacity-100");
+
+          // Hide toast after 2 seconds
+          setTimeout(() => {
+            toast.classList.add("translate-x-full", "opacity-0");
+            toast.classList.remove("translate-x-0", "opacity-100");
+          }, 2000);
+        } catch (err) {
+          // Fallback for older browsers
+          console.error("Failed to copy email:", err);
+        }
+      });
+    }
+
+    // Smooth scroll for logo link
+    const logoLink = document.querySelector('a[href="#home"]');
+    if (logoLink) {
+      logoLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    }
+  });
+</script>
