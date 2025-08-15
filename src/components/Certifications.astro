@@ -4,87 +4,132 @@ const certifiers = [
     id: 1,
     name: "Metrocert",
     description: "Organismo de certificación reconocido internacionalmente",
-    logo: "M"
+    logo: "metrocert_logo.webp",
+    website: "https://www.metrocert.com/",
   },
   {
     id: 2,
     name: "Mayacert",
-    description: "Certificación orgánica para mercados nacionales e internacionales",
-    logo: "My"
+    description:
+      "Certificación orgánica para mercados nacionales e internacionales",
+    logo: "mayacert_logo.webp",
+    website: "https://www.mayacert.com/",
   },
   {
     id: 3,
     name: "CAAE",
     description: "Comité Andaluz de Agricultura Ecológica",
-    logo: "C"
+    logo: "caae_logo.webp",
+    website: "https://www.caae.es/",
   },
   {
     id: 4,
     name: "SIAR",
     description: "Sistema de Información Agroalimentaria y Rural",
-    logo: "S"
+    logo: "siar_logo.webp",
+    website: "https://siar.mx/",
   },
   {
     id: 5,
     name: "CERTIMEX",
     description: "Certificadora mexicana de productos orgánicos",
-    logo: "Cx"
+    logo: "certimex_logo.webp",
+    website: "https://www.certimexsc.com/",
   },
   {
     id: 6,
     name: "Primus",
     description: "Auditorías y certificaciones para la industria alimentaria",
-    logo: "P"
-  }
+    logo: "primus_logo.webp",
+    website: "https://primusauditingops.com/es/",
+  },
 ];
 ---
 
 <section id="certifications" class="py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Section Header -->
     <div class="text-center mb-16">
       <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
         Organismos <span class="text-green-600">Certificadores</span>
       </h2>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        Trabajamos con los principales organismos certificadores reconocidos a nivel nacional e internacional
+        Trabajamos con los principales organismos certificadores reconocidos a
+        nivel nacional e internacional
       </p>
     </div>
 
-    <!-- Certifiers Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      {certifiers.map((certifier) => (
-        <div class="group bg-gray-50 rounded-xl p-8 text-center hover:bg-green-50 transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 hover:border-green-300">
-          <!-- Logo Placeholder -->
-          <div class="flex items-center justify-center w-20 h-20 bg-green-600 text-white text-2xl font-bold rounded-full mb-6 mx-auto group-hover:bg-green-700 transition-colors duration-300 shadow-lg">
-            {certifier.logo}
+      {
+        certifiers.map((certifier) => (
+          <div class="flex">
+            <a
+              href={certifier.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-white border border-gray-200 rounded-lg shadow-sm max-w-sm mx-auto p-8 group flex flex-col text-center w-full hover:scale-105 transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+            >
+              <div class="flex items-center justify-center mb-6 h-24">
+                <img
+                  src={`/${certifier.logo}`}
+                  alt={`${certifier.name} logo`}
+                  class="max-h-full max-w-full object-contain"
+                />
+              </div>
+
+              <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors duration-300">
+                {certifier.name}
+              </h3>
+              <p class="text-gray-600 leading-relaxed flex-grow">
+                {certifier.description}
+              </p>
+
+              <div class="mt-4 flex items-center justify-center text-green-600 group-hover:text-green-700 transition-colors duration-300">
+                <span class="text-sm font-medium mr-2">Visitar sitio web</span>
+                <svg
+                  class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </div>
+            </a>
           </div>
-          
-          <!-- Content -->
-          <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors duration-300">
-            {certifier.name}
-          </h3>
-          <p class="text-gray-600 leading-relaxed">
-            {certifier.description}
-          </p>
-        </div>
-      ))}
+        ))
+      }
     </div>
 
-    <!-- Call to Action -->
     <div class="text-center mt-16">
       <div class="bg-green-600 rounded-2xl p-8 text-white">
-        <h3 class="text-2xl font-bold mb-4">¿Necesitas una certificación específica?</h3>
+        <h3 class="text-2xl font-bold mb-4">
+          ¿Necesitas una certificación específica?
+        </h3>
         <p class="text-lg mb-6 opacity-90">
-          Contáctanos y te ayudamos a identificar el organismo certificador ideal para tu proyecto
+          Contáctanos y te ayudamos a identificar el organismo certificador
+          ideal para tu proyecto
         </p>
-        <a 
-          href="#contact" 
+        <a
+          href="#contact"
           class="inline-flex items-center px-6 py-3 bg-white text-green-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300 focus:ring-4 focus:ring-white/50 focus:outline-none"
         >
           Contactar ahora
-          <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          <svg
+            class="ml-2 w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
           </svg>
         </a>
       </div>
@@ -93,17 +138,17 @@ const certifiers = [
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener("DOMContentLoaded", function () {
     // Smooth scroll for contact link
     const contactLink = document.querySelector('a[href="#contact"]');
     if (contactLink) {
-      contactLink.addEventListener('click', function(e) {
+      contactLink.addEventListener("click", function (e) {
         e.preventDefault();
-        const contactSection = document.getElementById('contact');
+        const contactSection = document.getElementById("contact");
         if (contactSection) {
           contactSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+            behavior: "smooth",
+            block: "start",
           });
         }
       });

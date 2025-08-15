@@ -8,7 +8,11 @@
     <div class="text-center">
       <!-- Logo and Company Name -->
       <div class="flex items-center justify-center space-x-3 mb-6">
-        <img src="/favicon.svg" alt="Know How Logo" class="w-10 h-10" />
+        <img
+          src="/KnowHow_weppy.webp"
+          alt="Know How Logo"
+          class="h-10 w-auto"
+        />
         <div class="flex flex-col">
           <span class="text-2xl font-bold text-green-400">Know How</span>
           <span class="text-gray-300">Soluciones Agrícolas</span>
@@ -76,22 +80,22 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const backToTopButton = document.getElementById("back-to-top");
+    const backToTopBtn = document.getElementById("back-to-top");
 
-    if (backToTopButton) {
-      // Show/hide button based on scroll position
+    if (backToTopBtn) {
+      // Show/hide back to top button
       window.addEventListener("scroll", function () {
         if (window.pageYOffset > 300) {
-          backToTopButton.classList.remove("opacity-0", "invisible");
-          backToTopButton.classList.add("opacity-100", "visible");
+          backToTopBtn.classList.remove("opacity-0", "invisible");
+          backToTopBtn.classList.add("opacity-100", "visible");
         } else {
-          backToTopButton.classList.add("opacity-0", "invisible");
-          backToTopButton.classList.remove("opacity-100", "visible");
+          backToTopBtn.classList.add("opacity-0", "invisible");
+          backToTopBtn.classList.remove("opacity-100", "visible");
         }
       });
 
-      // Scroll to top when clicked
-      backToTopButton.addEventListener("click", function () {
+      // Smooth scroll to top
+      backToTopBtn.addEventListener("click", function () {
         window.scrollTo({
           top: 0,
           behavior: "smooth",

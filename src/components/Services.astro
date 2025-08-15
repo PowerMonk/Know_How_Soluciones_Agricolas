@@ -3,7 +3,7 @@ const services = [
   {
     id: 1,
     title: "Gestión de certificaciones",
-    description: "Tramitamos todas las certificaciones orgánicas necesarias para tu producción de aguacate",
+    description: "Tramitamos todas las certificaciones orgánicas necesarias para tu producción de aguacate.",
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
     </svg>`
@@ -11,7 +11,7 @@ const services = [
   {
     id: 2,
     title: "Auditorías y cumplimiento",
-    description: "Garantizamos el cumplimiento de todos los estándares orgánicos internacionales",
+    description: "Garantizamos el cumplimiento de todos los estándares orgánicos internacionales.",
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
     </svg>`
@@ -19,7 +19,7 @@ const services = [
   {
     id: 3,
     title: "Tecnología Avanzada",
-    description: "Utilizamos sistemas digitales modernos para agilizar todos los procesos de certificación",
+    description: "Utilizamos sistemas digitales modernos para agilizar todos los procesos de certificación.",
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
     </svg>`
@@ -27,7 +27,7 @@ const services = [
   {
     id: 4,
     title: "Asesoría Especializada",
-    description: "Nuestro equipo de expertos te acompaña durante todo el proceso de certificación",
+    description: "Nuestro equipo de expertos te acompaña durante todo el proceso de certificación.",
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
     </svg>`
@@ -51,14 +51,14 @@ const services = [
     <!-- Services Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {services.map((service) => (
-        <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-100 text-center">
           <!-- Icon -->
-          <div class="flex items-center justify-center w-16 h-16 bg-green-100 text-green-600 rounded-lg mb-6 group-hover:bg-green-600 group-hover:text-white transition-colors duration-300">
+          <div class="flex items-center justify-center w-16 h-16 bg-green-100 text-green-600 rounded-lg mb-6 mx-auto">
             <Fragment set:html={service.icon} />
           </div>
           
           <!-- Content -->
-          <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors duration-300">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">
             {service.title}
           </h3>
           <p class="text-gray-600 leading-relaxed">
